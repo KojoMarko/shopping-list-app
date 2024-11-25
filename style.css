@@ -821,6 +821,31 @@ footer .copyright {
 
 /* cart page  */
 #cart {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 20px 0;
+}
+#cart h2 {
+  margin-bottom: 15px;
+}
+#cart-items {
+  list-style-type: none;
+  padding: 0;
+}
+#cart-items li {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+.cart-summary {
+  font-weight: bold;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* --------------------------------- */
+#cart {
   overflow-x: auto;
 }
 
