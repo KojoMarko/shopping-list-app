@@ -107,6 +107,11 @@ body {
   transition-duration: 0.4s ease;
 }
 
+#navbar li a span {
+  padding-left: 5px;
+  color: red;
+}
+
 #navbar li a:hover,
 #navbar li .active {
   color: #13a6d1;

@@ -1,72 +1,184 @@
 const bar = document.getElementById("bar");
 const close = document.getElementById("close");
 const nav = document.getElementById("navbar");
+let carts = document.querySelectorAll(".add-cart");
+let products = [
+  {
+    name: "Men's Multicolor Shirt",
+    price: 779.99,
+    quantity: document.querySelector('input[type="number"]').value,
+    size: document.querySelector("select").value,
+    image: "image/products/f1.jpg",
+    incart: 0
+  },
+  {
+    name: "Men's Floral Shirt",
+    price: 779.99,
+    quantity: document.querySelector('input[type="number"]').value,
+    size: document.querySelector("select").value,
+    image: "image/products/f2.jpg",
+    incart: 0
+  },
+  {
+    name: "Men's Floral Short-Sleeve Shirt",
+    price: 779.99,
+    quantity: document.querySelector('input[type="number"]').value,
+    size: document.querySelector("select").value,
+    image: "image/products/f3.jpg",
+    incart: 0
+  },
+  {
+    name: "Men's Floral Short-Sleeve Shirt",
+    price: 779.99,
+    quantity: document.querySelector('input[type="number"]').value,
+    size: document.querySelector("select").value,
+    image: "image/products/f4.jpg",
+    incart: 0
+  },
+  {
+    name: "Men's Floral Short-Sleeve Shirt",
+    price: 899.99,
+    quantity: document.querySelector('input[type="number"]').value,
+    size: document.querySelector("select").value,
+    image: "image/products/f5.jpg",
+    incart: 0
+  },
+  {
+    name: "Men's Two-Tone Corduroy Shirt",
+    price: 999.99,
+    quantity: document.querySelector('input[type="number"]').value,
+    size: document.querySelector("select").value,
+    image: "image/products/f6.jpg",
+    incart: 0
+  },
+  {
+    name: "Men's Fashion Shorts",
+    price: 999.99,
+    quantity: document.querySelector('input[type="number"]').value,
+    size: document.querySelector("select").value,
+    image: "image/products/f7.jpg",
+    incart: 0
+  },
+  {
+    name: "Women's Cat Print Blouse",
+    price: 899.99,
+    quantity: document.querySelector('input[type="number"]').value,
+    size: document.querySelector("select").value,
+    image: "image/products/f8.jpg",
+    incart: 0
+  },
+  {
+    name: "Men's Fashion Shirts",
+    price: 679.99,
+    quantity: document.querySelector('input[type="number"]').value,
+    size: document.querySelector("select").value,
+    image: "image/products/n1.jpg",
+    incart: 0
+  },
+  {
+    name: "Men's Fashion Long Sleeves Shirt",
+    price: 679.99,
+    quantity: document.querySelector('input[type="number"]').value,
+    size: document.querySelector("select").value,
+    image: "image/products/n2.jpg",
+    incart: 0
+  },
+  {
+    name: "Men's Fashion Long Sleeves Shirtt",
+    price: 679.99,
+    quantity: document.querySelector('input[type="number"]').value,
+    size: document.querySelector("select").value,
+    image: "image/products/n3.jpg",
+    incart: 0
+  },
+  {
+    name: "Men's Fashion Shirts",
+    price: 899.99,
+    quantity: document.querySelector('input[type="number"]').value,
+    size: document.querySelector("select").value,
+    image: "image/products/n4.jpg",
+    incart: 0
+  },
+  {
+    name: "Men's Fashion Long Sleeves Shirt",
+    price: 679.99,
+    quantity: document.querySelector('input[type="number"]').value,
+    size: document.querySelector("select").value,
+    image: "image/products/n5.jpg",
+    incart: 0
+  },
+  {
+    name: "Men's Fashion Shorts",
+    price: 999.99,
+    quantity: document.querySelector('input[type="number"]').value,
+    size: document.querySelector("select").value,
+    image: "image/products/n6.jpg",
+    incart: 0
+  },
+  {
+    name: "Men's Khaki Long Sleeves Shirt",
+    price: 899.99,
+    quantity: document.querySelector('input[type="number"]').value,
+    size: document.querySelector("select").value,
+    image: "image/products/n7.jpg",
+    incart: 0
+  },
+  {
+    name: "Men's Fashion Shirts",
+    price: 899.99,
+    quantity: document.querySelector('input[type="number"]').value,
+    size: document.querySelector("select").value,
+    image: "image/products/n8.jpg",
+    incart: 0
+  },
+];
 
-// Selectors
-const cartItems = document.getElementById("cart-items");
-const cartTotal = document.getElementById("cart-total");
-const addToCartButtons = document.querySelectorAll(".add-to-cart");
 
-// Cart Data
-let cart = [];
-
-// Load Cart
-function loadCart() {
-    const savedCart = localStorage.getItem("cart");
-    cart = savedCart ? JSON.parse(savedCart) : [];
-    updateCart();
+for (let i = 0; i < carts.length; i++) {
+  carts[i].addEventListener("click", () => {
+    cartNumbers();
+  });
 }
 
-// Save Cart
-function saveCart() {
-    localStorage.setItem("cart", JSON.stringify(cart));
-}
+// function cartNumbers() {
+//   let productNumbers = localStorage.getItem('cartNumbers');
+//   productNumbers = parseInt(productNumbers);
+  
 
-// Update Cart
-function updateCart() {
-    cartItems.innerHTML = ""; // Clear current items
-    let total = 0;
+//   if (productNumbers) {
+//     localStorage.setItem('cartNumbers', productNumbers + 1)
+//   } else {
+//     localStorage.setItem('cartNumbers', 1)
+//     document.querySelector('.cart span').textContent = productNumbers + 1;
+//   }
+// };
 
-    cart.forEach((item, index) => {
-        const li = document.createElement("li");
-        li.innerHTML = `
-            ${item.name} - GH₵${item.price.toFixed(2)}
-            <button class="remove-from-cart" data-index="${index}">Remove</button>
-        `;
-        cartItems.appendChild(li);
-        total += item.price;
-    });
+//   localStorage.setItem("cartNumbers", 1);
 
-    cartTotal.textContent = `GH₵${total.toFixed(2)}`;
-    saveCart();
-}
+function onLoadCartNumbers() {
+    let productNumbers = localStorage.getItem('cartNumbers')
 
-// Add to Cart
-addToCartButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        const product = {
-            id: button.getAttribute("data-id"),
-            name: button.getAttribute("data-name"),
-            price: parseFloat(button.getAttribute("data-price"))
-        };
-
-        cart.push(product);
-        updateCart();
-    });
-});
-
-// Remove from Cart
-cartItems.addEventListener("click", e => {
-    if (e.target.classList.contains("remove-from-cart")) {
-        const index = e.target.getAttribute("data-index");
-        cart.splice(index, 1);
-        updateCart();
+    if (productNumbers) {
+        document.querySelector('.cart span').textContent = productNumbers;
     }
-});
+}
 
-// Initialize
-window.onload = loadCart;
+function cartNumbers() {
+    let productNumbers = localStorage.getItem('cartNumbers');
+  
+    // Check if the value is a valid number string
+    if (productNumbers && !isNaN(productNumbers)) {
+      productNumbers = parseInt(productNumbers);
+      productNumbers++;
+    } else {
+      productNumbers = 1;
+    }
+  
+    localStorage.setItem('cartNumbers', productNumbers);
+    document.querySelector('.cart span').textContent = productNumbers;
+  }
 
+  onLoadCartNumbers();
 
 if (bar) {
   bar.addEventListener("click", () => {
