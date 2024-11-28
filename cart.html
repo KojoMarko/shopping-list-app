@@ -4,90 +4,92 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shopping Cart</title>
+    <title>Shopping List Application</title>
+    <script
+      src="https://kit.fontawesome.com/8f66907440.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="style.css" />
-    <script src="https://kit.fontawesome.com/8f66907440.js" crossorigin="anonymous"></script>
     <style>
-      /* Add your CSS here or link it as an external file */
       #cart {
         overflow-x: auto;
       }
-
+  
       #cart table {
         width: 100%;
         border-collapse: collapse;
         table-layout: fixed;
         white-space: nowrap;
       }
-
+  
       #cart table img {
         width: 70px;
       }
-
+  
       #cart table td:nth-child(1) {
         width: 100px;
         text-align: center;
       }
-
+  
       #cart table td:nth-child(2) {
         width: 150px;
         text-align: center;
       }
-
+  
       #cart table td:nth-child(3) {
         width: 250px;
         text-align: center;
       }
-
+  
       #cart table td:nth-child(4),
       #cart table td:nth-child(5),
       #cart table td:nth-child(6) {
         width: 150px;
         text-align: center;
       }
-
+  
       #cart table td:nth-child(5) input {
         width: 70px;
         padding: 10px 5px 10px 15px;
       }
-
+  
       #cart table thead {
         border: 1px solid #cce7d0;
         border-left: none;
         border-right: none;
       }
-
+  
       #cart table thead td {
         font-weight: 700;
         text-transform: uppercase;
         font-size: 13px;
         padding: 18px 0;
       }
-
+  
       #cart table tbody tr td {
         padding-top: 15px;
       }
-
+  
       #cart table tbody td {
         font-size: 13px;
       }
-
+  
       #cart-add {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
       }
-
+  
       #coupon {
         width: 50%;
         margin-bottom: 30px;
       }
-
+  
       #coupon h3,
       #subtotal h3 {
         padding-bottom: 15px;
       }
-
+  
       #coupon input {
         padding: 10px 20px;
         outline: none;
@@ -95,34 +97,34 @@
         margin-right: 10px;
         border: 1px solid #e1e1e1;
       }
-
+  
       #coupon button,
       #subtotal button {
         background-color: rgb(9, 136, 94);
         color: #cce7d0;
         padding: 12px 20px;
       }
-
+  
       #subtotal {
         width: 50%;
         margin-bottom: 30px;
         border: 1px solid #e1e1e1;
         padding: 30px;
       }
-
+  
       #subtotal table {
         border-collapse: collapse;
         width: 100%;
         margin-bottom: 20px;
       }
-
+  
       #subtotal table td {
         width: 50%;
         border: 1px solid #e1e1e1;
         padding: 10px;
         font-size: 13px;
       }
-
+  
       .normal {
         background-color: rgb(9, 136, 94);
         color: #cce7d0;
@@ -133,9 +135,9 @@
     </style>
   </head>
   <body>
-    <!-- Header Section -->
     <section id="header">
       <a href="#"><img src="image/sl logo.png" class="logo" alt="SL Logo" /></a>
+
       <div>
         <ul id="navbar">
           <li><a href="index.html">Home</a></li>
@@ -144,51 +146,80 @@
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li class="cart">
-            <a id="lg-bag" class="active" href="cart.html"><i class="fa-solid fa-bag-shopping"></i><span>0</span></a>
+            <a class="active" id="lg-bag" href="cart.html"
+              ><i class="fa-solid fa-bag-shopping"></i
+            ><span>0</span></a>
           </li>
+          <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
         </ul>
       </div>
-    </section>
 
-    <!-- Cart Section -->
-    <section id="cart" class="section-p1">
-      <h2>Shopping Cart</h2>
-      <div id="cart-items-container">
-        <!-- Cart items will be dynamically inserted here -->
-        <table>
-          <thead>
-            <tr>
-              <td>Image</td>
-              <td>Product</td>
-              <td>Size</td>
-              <td>Price</td>
-              <td>Quantity</td>
-              <td>Total</td>
-            </tr>
-          </thead>
-          <tbody id="cart-items-list">
-            <!-- Cart items go here -->
-          </tbody>
-        </table>
-      </div>
-
-      <div id="cart-summary">
-        <h3>Cart Summary</h3>
-        <p>Total Items: <span id="total-items">0</span></p>
-        <p>Total Price: GH₵<span id="total-price">0.00</span></p>
-        <button id="checkout-btn" class="normal">Proceed to Checkout</button>
+      <div id="mobile">
+        <i id="bar" class="fa-solid fa-bars"></i>
+        <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
       </div>
     </section>
 
-    <!-- Footer Section -->
+    <section id="page-header" class="about-header">
+      <h2>#Let's_talk</h2>
+      <p>LEAVE A MESSAGE, we love to hear from you!</p>
+    </section>
+      
+  <!-- Cart Section -->
+  <section id="cart" class="section-p1">
+    <h2>Shopping Cart</h2>
+    <div id="cart-items-container">
+      <!-- Cart items will be dynamically inserted here -->
+      <table>
+        <thead>
+          <tr>
+            <td>Image</td>
+            <td>Product</td>
+            <td>Size</td>
+            <td>Price</td>
+            <td>Quantity</td>
+            <td>Total</td>
+          </tr>
+        </thead>
+        <tbody id="cart-items-list">
+          <!-- Cart items go here -->
+        </tbody>
+      </table>
+    </div>
+
+    <div id="cart-summary">
+      <h3>Cart Summary</h3>
+      <p>Total Items: <span id="total-items">0</span></p>
+      <p>Total Price: GH₵<span id="total-price">0.00</span></p>
+      <button id="checkout-btn" class="normal">Proceed to Checkout</button>
+    </div>
+  </section>
+
+  
+  
+
+
     <footer class="section-p1">
       <div class="col">
         <img class="logo" src="image/sl logo.png" alt="Shopping list logo" />
         <h4>Contact</h4>
-        <p><strong>Address:</strong> Box 126, Ashaiman - Greater Accra</p>
+        <p><strong>Adress:</strong> Box 126, Ashaiman - Greater Accra</p>
         <p><strong>Phone:</strong> +233 55 123 4567</p>
         <p><strong>Hours:</strong> 8:00 - 17:00, Mon - Sat</p>
+
+        <div class="follow">
+          <h4>Follow Us</h4>
+
+          <div class="icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-pinterest"></i>
+            <i class="fa-brands fa-youtube"></i>
+          </div>
+        </div>
       </div>
+
       <div class="col">
         <h4>About</h4>
         <a href="#">About Us</a>
@@ -205,7 +236,22 @@
         <a href="#">Track My Order</a>
         <a href="#">Help</a>
       </div>
+      <div class="col install">
+        <h4>Install App</h4>
+        <p>From App Store or Google Play store</p>
+        <div class="row">
+          <img src="image/pay/app.jpg" alt="image of app store logo" />
+          <img src="image/pay/play.jpg" alt="image of Google play store logo" />
+        </div>
+        <p>Secure Payment Gateways</p>
+        <img src="image/pay/pay.png" alt="available payment method's logos" />
+      </div>
+
+      <div class="copyright">
+        <p>© 2024, made with ❤️ by Caleb Makafui, Shopping List Application</p>
+      </div>
     </footer>
+
 
     <script>
       // Function to load cart items from localStorage
@@ -215,9 +261,9 @@
         const totalItems = document.getElementById("total-items");
         const totalPrice = document.getElementById("total-price");
         let totalAmount = 0;
-
+  
         cartItemsContainer.innerHTML = ''; // Clear previous items
-
+  
         // Loop through the cart and display each item
         cart.forEach((item, index) => {
           const row = document.createElement("tr");
@@ -231,45 +277,47 @@
             <td><button class="normal remove-item-btn" data-index="${index}">Remove</button></td>
           `;
           cartItemsContainer.appendChild(row);
-
+  
           totalAmount += item.price * item.quantity;
         });
-
+  
         totalItems.textContent = cart.length;
         totalPrice.textContent = totalAmount.toFixed(2);
       }
-
+  
       // Update item quantity
       document.getElementById("cart-items-list").addEventListener("input", function (e) {
         if (e.target && e.target.classList.contains("quantity-input")) {
           const index = e.target.getAttribute("data-index");
           const newQuantity = e.target.value;
-
+  
           const cart = JSON.parse(localStorage.getItem("cart")) || [];
           cart[index].quantity = newQuantity;
           localStorage.setItem("cart", JSON.stringify(cart));
-
+  
           loadCartItems();
         }
       });
-
+  
       // Remove item from cart
       document.getElementById("cart-items-list").addEventListener("click", function (e) {
         if (e.target && e.target.classList.contains("remove-item-btn")) {
           const index = e.target.getAttribute("data-index");
-
+  
           const cart = JSON.parse(localStorage.getItem("cart")) || [];
           cart.splice(index, 1); // Remove the item from the array
           localStorage.setItem("cart", JSON.stringify(cart));
-
+  
           loadCartItems();
         }
       });
-
+  
       // Load cart items when the page loads
       window.onload = function () {
         loadCartItems();
       };
     </script>
+
+    <script src="script.js"></script>
   </body>
 </html>
