@@ -7,22 +7,22 @@ const mobileCartCounter = document.querySelector("#mobile a span");
 
 // Product List
 const products = [
-  { name: "Men's Multicolor Shirt", price: 779.99, image: "image/products/f1.jpg", incart: 0 },
-  { name: "Men's Floral Shirt", price: 779.99, image: "image/products/f2.jpg", incart: 0 },
-  { name: "Men's Floral Short-Sleeve Shirt", price: 779.99, image: "image/products/f3.jpg", incart: 0 },
-  { name: "Men's Floral Short-Sleeve Shirt", price: 779.99, image: "image/products/f4.jpg", incart: 0 },
-  { name: "Men's Floral Short-Sleeve Shirt", price: 899.99, image: "image/products/f5.jpg", incart: 0 },
-  { name: "Men's Two-Tone Corduroy Shirt", price: 999.99, image: "image/products/f6.jpg", incart: 0 },
-  { name: "Men's Fashion Shorts", price: 999.99, image: "image/products/f7.jpg", incart: 0 },
-  { name: "Women's Cat Print Blouse", price: 899.99, image: "image/products/f8.jpg", incart: 0 },
-  { name: "Men's Fashion Shirts", price: 679.99, image: "image/products/n1.jpg", incart: 0 },
-  { name: "Men's Fashion Long Sleeves Shirt", price: 679.99, image: "image/products/n2.jpg", incart: 0 },
-  { name: "Men's Fashion Long Sleeves Shirt", price: 679.99, image: "image/products/n3.jpg", incart: 0 },
-  { name: "Men's Fashion Shirts", price: 899.99, image: "image/products/n4.jpg", incart: 0 },
-  { name: "Men's Fashion Long Sleeves Shirt", price: 679.99, image: "image/products/n5.jpg", incart: 0 },
-  { name: "Men's Fashion Shorts", price: 999.99, image: "image/products/n6.jpg", incart: 0 },
-  { name: "Men's Khaki Long Sleeves Shirt", price: 899.99, image: "image/products/n7.jpg", incart: 0 },
-  { name: "Men's Fashion Shirts", price: 899.99, image: "image/products/n8.jpg", incart: 0 },
+  { name: "Men's Multicolor Shirt", price: 779.99, image: "image/products/f1.jpg", id:0 },
+  { name: "Men's Floral Shirt", price: 779.99, image: "image/products/f2.jpg", id:1  },
+  { name: "Men's Floral Short-Sleeve Shirt", price: 779.99, image: "image/products/f3.jpg", id:2  },
+  { name: "Men's Floral Short-Sleeve Shirt", price: 779.99, image: "image/products/f4.jpg", id:3  },
+  { name: "Men's Floral Short-Sleeve Shirt", price: 899.99, image: "image/products/f5.jpg", id:4  },
+  { name: "Men's Two-Tone Corduroy Shirt", price: 999.99, image: "image/products/f6.jpg", id:5  },
+  { name: "Men's Fashion Shorts", price: 999.99, image: "image/products/f7.jpg", id:6  },
+  { name: "Women's Cat Print Blouse", price: 899.99, image: "image/products/f8.jpg", id:7  },
+  { name: "Men's Fashion Shirts", price: 679.99, image: "image/products/n1.jpg", id:8  },
+  { name: "Men's Fashion Long Sleeves Shirt", price: 679.99, image: "image/products/n2.jpg", id:9  },
+  { name: "Men's Fashion Long Sleeves Shirt", price: 679.99, image: "image/products/n3.jpg", id:10  },
+  { name: "Men's Fashion Shirts", price: 899.99, image: "image/products/n4.jpg", id:11  },
+  { name: "Men's Fashion Long Sleeves Shirt", price: 679.99, image: "image/products/n5.jpg", id:12  },
+  { name: "Men's Fashion Shorts", price: 999.99, image: "image/products/n6.jpg", id:13  },
+  { name: "Men's Khaki Long Sleeves Shirt", price: 899.99, image: "image/products/n7.jpg", id:14  },
+  { name: "Men's Fashion Shirts", price: 899.99, image: "image/products/n8.jpg", id:15  },
 ];
 
 // Add event listeners to "Add to Cart" buttons
