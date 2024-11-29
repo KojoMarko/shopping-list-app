@@ -108,8 +108,19 @@ body {
 }
 
 #navbar li a span {
-  padding-left: 5px;
-  color: red;
+  position: absolute; /* Position relative to .cart */
+  top: -10px; /* Adjust as per your design */
+  right: -2px; /* Adjust as per your design */
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 3px 5px;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+  z-index: 1000; /* Ensure it's above other elements */
+  text-align: center;
+  white-space: nowrap;
 }
 
 #navbar li a:hover,
@@ -963,7 +974,6 @@ footer .copyright {
   font-size: 13px;
 }
 
-
 /* media query */
 @media (max-width: 799px) {
   #navbar {
@@ -980,6 +990,70 @@ footer .copyright {
     box-shadow: 0 40px 60px rgba(0, 0, 0, 0.02);
     padding: 64px 0 0 10px;
     transition: 0.5s;
+  }
+
+  #mobile a span {
+    top: -3px; /* Fine-tune for smaller screens */
+    right: -5px; /* Fine-tune for smaller screens */
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+
+  #mobile {
+    font-size: 18px; /* Adjust overall font size for mobile view */
+  }
+
+  .cart {
+    position: relative; /* Necessary for the .cart span positioning */
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  /* Style for the item counter */
+  .cart span {
+    position: absolute; /* Position relative to .cart */
+    top: -10px; /* Adjust as per your design */
+    right: -2px; /* Adjust as per your design */
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 3px 5px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    z-index: 1000; /* Ensure it's above other elements */
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  /* Container for mobile navigation */
+  #mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  /* Styling for the cart icon and counter */
+  #mobile a {
+    position: relative; /* Necessary for positioning the span inside the link */
+    text-decoration: none;
+    color: inherit; /* Ensure it matches the site's theme */
+    font-size: 20px;
+  }
+
+  #mobile a span {
+    position: absolute; /* Position relative to the parent <a> */
+    top: -15px; /* Adjust to align the counter with the icon */
+    right: -10px; /* Adjust spacing from the cart icon */
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 4px 8px; /* Size of the counter bubble */
+    font-size: 12px; /* Adjust font size as needed */
+    font-weight: bold;
+    text-align: center;
+    z-index: 10; /* Ensure it appears above other elements */
   }
 
   #navbar.active {
@@ -1223,5 +1297,3 @@ footer .copyright {
     padding: 20px;
   }
 }
-
-

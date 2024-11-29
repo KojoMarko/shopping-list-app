@@ -24,8 +24,8 @@
           <li><a href="contact.html">Contact</a></li>
           <li class="cart">
             <a id="lg-bag" href="cart.html"
-              ><i class="fa-solid fa-bag-shopping"></i
-            ><span>0</span></a>
+              ><i class="fa-solid fa-bag-shopping"></i><span>0</span></a
+            >
           </li>
           <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
         </ul>
@@ -33,7 +33,9 @@
 
       <div id="mobile">
         <i id="bar" class="fa-solid fa-bars"></i>
-        <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+        <a href="cart.html"
+          ><i class="fa-solid fa-bag-shopping"></i><span>0</span></a
+        >
       </div>
     </section>
 
@@ -97,7 +99,13 @@
         <button class="normal add-cart">Add to cart</button>
 
         <h4>Product Details</h4>
-        <span>This lightweight, breathable shirt is crafted from a soft, textured fabric. Featuring a stand collar and button-down front, it offers a relaxed and stylish look. The chest pocket adds a functional touch, while the long sleeves provide comfortable coverage. Perfect for layering or wearing on its own, this versatile shirt is a must-have for your wardrobe.</span
+        <span
+          >This lightweight, breathable shirt is crafted from a soft, textured
+          fabric. Featuring a stand collar and button-down front, it offers a
+          relaxed and stylish look. The chest pocket adds a functional touch,
+          while the long sleeves provide comfortable coverage. Perfect for
+          layering or wearing on its own, this versatile shirt is a must-have
+          for your wardrobe.</span
         >
       </div>
     </section>
@@ -105,9 +113,12 @@
     <section id="product1" class="section-p1">
       <h2>Featured Products</h2>
       <p>Summer Collections New Modern Designs</p>
-      <div class="pro-container" >
+      <div class="pro-container">
         <div class="pro" onclick="window.location.href='sproduct2.html';">
-          <img src="image/products/f5.jpg" alt="Men's Floral Short-Sleeve Shirt" />
+          <img
+            src="image/products/f5.jpg"
+            alt="Men's Floral Short-Sleeve Shirt"
+          />
           <div class="des">
             <span>adidas</span>
             <h5>Men's Floral Short-Sleeve Shirt</h5>
@@ -141,7 +152,10 @@
         </div>
 
         <div class="pro" onclick="window.location.href='sproduct2.html';">
-          <img src="image/products/n7.jpg" alt="Men's Khaki Long Sleeves Shirt" />
+          <img
+            src="image/products/n7.jpg"
+            alt="Men's Khaki Long Sleeves Shirt"
+          />
           <div class="des">
             <span>adidas</span>
             <h5>Men's Khaki Long Sleeves Shirt</h5>
@@ -245,21 +259,21 @@
     </footer>
 
     <script>
-      var MainImg = document.getElementById("MainImg")
-      var smallimg = document.getElementsByClassName("small-img")
+      var MainImg = document.getElementById("MainImg");
+      var smallimg = document.getElementsByClassName("small-img");
 
-      smallimg[0].onclick = function(){
-        MainImg.src = smallimg[0].src
-      }
-      smallimg[1].onclick = function(){
-        MainImg.src = smallimg[1].src
-      }
-      smallimg[2].onclick = function(){
-        MainImg.src = smallimg[2].src
-      }
-      smallimg[3].onclick = function(){
-        MainImg.src = smallimg[3].src
-      }
+      smallimg[0].onclick = function () {
+        MainImg.src = smallimg[0].src;
+      };
+      smallimg[1].onclick = function () {
+        MainImg.src = smallimg[1].src;
+      };
+      smallimg[2].onclick = function () {
+        MainImg.src = smallimg[2].src;
+      };
+      smallimg[3].onclick = function () {
+        MainImg.src = smallimg[3].src;
+      };
     </script>
 
     <script src="script.js"></script>

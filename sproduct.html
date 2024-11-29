@@ -24,8 +24,8 @@
           <li><a href="contact.html">Contact</a></li>
           <li class="cart">
             <a id="lg-bag" href="cart.html"
-              ><i class="fa-solid fa-bag-shopping"></i
-            ><span>0</span></a>
+              ><i class="fa-solid fa-bag-shopping"></i><span>0</span></a
+            >
           </li>
           <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
         </ul>
@@ -33,7 +33,9 @@
 
       <div id="mobile">
         <i id="bar" class="fa-solid fa-bars"></i>
-        <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+        <a href="cart.html"
+          ><i class="fa-solid fa-bag-shopping"></i><span>0</span></a
+        >
       </div>
     </section>
 
@@ -147,7 +149,10 @@
         </div>
 
         <div class="pro" onclick="window.location.href='sproduct1.html';">
-          <img src="image/products/n3.jpg" alt="Men's Fashion Long Sleeves Shirt" />
+          <img
+            src="image/products/n3.jpg"
+            alt="Men's Fashion Long Sleeves Shirt"
+          />
           <div class="des">
             <span>adidas</span>
             <h5>Men's Fashion Long Sleeves Shirt</h5>
@@ -251,32 +256,36 @@
     </footer>
 
     <script>
-      var MainImg = document.getElementById("MainImg")
-      var smallimg = document.getElementsByClassName("small-img")
+      var MainImg = document.getElementById("MainImg");
+      var smallimg = document.getElementsByClassName("small-img");
 
-      smallimg[0].onclick = function(){
-        MainImg.src = smallimg[0].src
-      }
-      smallimg[1].onclick = function(){
-        MainImg.src = smallimg[1].src
-      }
-      smallimg[2].onclick = function(){
-        MainImg.src = smallimg[2].src
-      }
-      smallimg[3].onclick = function(){
-        MainImg.src = smallimg[3].src
-      }
+      smallimg[0].onclick = function () {
+        MainImg.src = smallimg[0].src;
+      };
+      smallimg[1].onclick = function () {
+        MainImg.src = smallimg[1].src;
+      };
+      smallimg[2].onclick = function () {
+        MainImg.src = smallimg[2].src;
+      };
+      smallimg[3].onclick = function () {
+        MainImg.src = smallimg[3].src;
+      };
     </script>
 
     <script>
       // Capture product details and add to cart
       document.getElementById("add-to-cart-btn").onclick = function () {
         var productImage = document.getElementById("MainImg").src;
-        var productName = document.querySelector(".single-pro-details h4").textContent;
-        var productPrice = document.querySelector(".single-pro-details h2").textContent;
+        var productName = document.querySelector(
+          ".single-pro-details h4"
+        ).textContent;
+        var productPrice = document.querySelector(
+          ".single-pro-details h2"
+        ).textContent;
         var productSize = document.getElementById("size-select").value;
         var productQuantity = document.getElementById("quantity-input").value;
-    
+
         // Create the cart item object
         var cartItem = {
           image: productImage,
@@ -285,15 +294,15 @@
           size: productSize,
           quantity: parseInt(productQuantity),
         };
-    
+
         // Get existing cart from localStorage
         var cart = JSON.parse(localStorage.getItem("cart")) || [];
-    
+
         // Check if the product is already in the cart (same name and size)
         var existingItem = cart.find(
           (item) => item.name === cartItem.name && item.size === cartItem.size
         );
-    
+
         if (existingItem) {
           // If the item is already in the cart, update its quantity
           existingItem.quantity += cartItem.quantity;
@@ -301,19 +310,19 @@
           // If the item is not in the cart, add it
           cart.push(cartItem);
         }
-    
+
         // Save the updated cart to localStorage
         localStorage.setItem("cart", JSON.stringify(cart));
-    
+
         // Update the cart display
         updateCartDisplay();
       };
-    
+
       function updateCartDisplay() {
         var cart = JSON.parse(localStorage.getItem("cart")) || [];
         document.getElementById("lg-bag").children[1].textContent = cart.length;
       }
-    
+
       // Initial cart update
       updateCartDisplay();
     </script>
