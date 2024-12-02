@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping List Application</title>
-    <script src="https://kit.fontawesome.com/8f66907440.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/8f66907440.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -19,7 +22,9 @@
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li class="cart">
-            <a id="lg-bag" href="cart.html"><i class="fa-solid fa-bag-shopping"></i><span>0</span></a>
+            <a id="lg-bag" href="cart.html"
+              ><i class="fa-solid fa-bag-shopping"></i><span>0</span></a
+            >
           </li>
         </ul>
       </div>
@@ -27,19 +32,44 @@
 
     <section id="prodetails" class="section-p1">
       <div class="single-pro-image">
-        <img src="image/products/f1.jpg" width="100%" id="MainImg" alt="Main product image" />
+        <img
+          src="image/products/f1.jpg"
+          width="100%"
+          id="MainImg"
+          alt="Main product image"
+        />
         <div class="small-img-group">
           <div class="small-img-col" id="0">
-            <img src="image/products/f1.jpg" width="100%" class="small-img" alt="Product image 1" />
+            <img
+              src="image/products/f1.jpg"
+              width="100%"
+              class="small-img"
+              alt="Product image 1"
+            />
           </div>
           <div class="small-img-col" id="1">
-            <img src="image/products/f2.jpg" width="100%" class="small-img" alt="Product image 2" />
+            <img
+              src="image/products/f2.jpg"
+              width="100%"
+              class="small-img"
+              alt="Product image 2"
+            />
           </div>
           <div class="small-img-col" id="2">
-            <img src="image/products/f3.jpg" width="100%" class="small-img" alt="Product image 3" />
+            <img
+              src="image/products/f3.jpg"
+              width="100%"
+              class="small-img"
+              alt="Product image 3"
+            />
           </div>
           <div class="small-img-col" id="3">
-            <img src="image/products/f4.jpg" width="100%" class="small-img" alt="Product image 4" />
+            <img
+              src="image/products/f4.jpg"
+              width="100%"
+              class="small-img"
+              alt="Product image 4"
+            />
           </div>
         </div>
       </div>
@@ -48,19 +78,25 @@
         <h6>Home / T Shirt</h6>
         <h4 id="product-name">Men's Fashion T Shirt</h4>
         <h2 id="product-price">GH₵779.99</h2>
-        <select name="size" id="size-select">
+        <select name="size" id="product-size">
           <option value="">Select Size</option>
           <option value="Small">Small</option>
           <option value="Large">Large</option>
           <option value="Extra-Large">XL</option>
           <option value="Extra-Extra-Large">XXL</option>
         </select>
-        <input type="number" value="1" id="quantity-input" />
-        <button class="normal add-cart" id="add-to-cart-btn">Add to cart</button>
+        <input type="number" value="1" id="product-quantity" />
+        <button class="normal add-cart" id="add-to-cart-btn">
+          Add to cart
+        </button>
 
         <h4>Product Details</h4>
         <span id="product-description">
-          The Gildan Ultra Cotton T-Shirt from a substantial 6.0 oz. per sq. yd. fabric constructed from 100% cotton. This classic fit preshrunk jersey knit provides unmatched comfort with each wear. Featuring a taped neck and shoulder, and a seamless double-needed collar and available in a range of colors, it offers it all in the head-turning package.
+          The Gildan Ultra Cotton T-Shirt from a substantial 6.0 oz. per sq. yd.
+          fabric constructed from 100% cotton. This classic fit preshrunk jersey
+          knit provides unmatched comfort with each wear. Featuring a taped neck
+          and shoulder, and a seamless double-needed collar and available in a
+          range of colors, it offers it all in the head-turning package.
         </span>
       </div>
     </section>
@@ -69,37 +105,56 @@
       <h2>Featured Products</h2>
       <p>Summer Collections New Modern Designs</p>
       <div class="pro-container">
-        <div class="pro" onclick="updateProductDetails('image/products/n1.jpg', 'Men\'s Fashion Shirts', 'GH₵679.99', 'adidas', 'The best in fashion wear!')" id="8">
+        <div class="pro" onclick="window.location.href='sproduct1.html';">
           <img src="image/products/n1.jpg" alt="Product 1" />
           <div class="des">
             <span>adidas</span>
             <h5>Men's Fashion Shirts</h5>
             <div class="star">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
             </div>
             <h4>GH₵679.99</h4>
           </div>
         </div>
 
-        <div class="pro" onclick="updateProductDetails('image/products/n2.jpg', 'Men\'s Fashion Long Sleeves Shirt', 'GH₵679.99', 'adidas', 'Stay stylish this season with long sleeves!')" id="9">
+        <div class="pro" onclick="window.location.href='sproduct1.html';">
           <img src="image/products/n2.jpg" alt="Product 2" />
           <div class="des">
             <span>adidas</span>
             <h5>Men's Fashion Long Sleeves Shirt</h5>
             <div class="star">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
             </div>
             <h4>GH₵679.99</h4>
           </div>
         </div>
 
-        <div class="pro" onclick="updateProductDetails('image/products/n3.jpg', 'Men\'s Fashion Long Sleeves Shirt', 'GH₵679.99', 'adidas', 'Comfortable and modern look!')" id="10">
+        <div class="pro" onclick="window.location.href='sproduct1.html';">
           <img src="image/products/n3.jpg" alt="Product 3" />
           <div class="des">
             <span>adidas</span>
             <h5>Men's Fashion Long Sleeves Shirt</h5>
             <div class="star">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
+            </div>
+            <h4>GH₵679.99</h4>
+          </div>
+        </div>
+        <div class="pro" onclick="window.location.href='sproduct1.html';">
+          <img src="image/products/n5.jpg" alt="Product 3" />
+          <div class="des">
+            <span>adidas</span>
+            <h5>Men's Fashion Long Sleeves Shirt</h5>
+            <div class="star">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
             </div>
             <h4>GH₵679.99</h4>
           </div>
@@ -176,74 +231,81 @@
     </footer>
 
     <script>
+      // Main image element
       var MainImg = document.getElementById("MainImg");
+      // Thumbnail images
       var smallimg = document.getElementsByClassName("small-img");
 
-      smallimg[0].onclick = function () {
-        MainImg.src = smallimg[0].src;
-      };
-      smallimg[1].onclick = function () {
-        MainImg.src = smallimg[1].src;
-      };
-      smallimg[2].onclick = function () {
-        MainImg.src = smallimg[2].src;
-      };
-      smallimg[3].onclick = function () {
-        MainImg.src = smallimg[3].src;
-      };
-    </script>
+      // Loop through thumbnails to add click functionality
+      for (let i = 0; i < smallimg.length; i++) {
+        smallimg[i].onclick = function () {
+          const product = products[i]; // Retrieve product by index
 
-    <script>
-      // Capture product details and add to cart
-      document.getElementById("add-to-cart-btn").onclick = function () {
-        var productImage = document.getElementById("MainImg").src;
-        var productName = document.querySelector(
-          ".single-pro-details h4"
-        ).textContent;
-        var productPrice = document.querySelector(
-          ".single-pro-details h2"
-        ).textContent;
-        var productSize = document.getElementById("size-select").value;
-        var productQuantity = document.getElementById("quantity-input").value;
+          // Update the main image
+          MainImg.src = product.image;
 
-        // Create the cart item object
-        var cartItem = {
-          image: productImage,
+          // Update product details dynamically
+          document.getElementById("product-name").textContent = product.name;
+          document.getElementById(
+            "product-price"
+          ).textContent = `GH₵${product.price.toFixed(2)}`;
+        };
+      }
+
+      // Add to cart button functionality
+      document.getElementById("add-to-cart-btn").addEventListener("click", function () {
+        const productImage = new URL(MainImg.src).pathname; // Normalize the image path
+        const productName = document.getElementById("product-name").textContent.trim();
+        const productSize = document.getElementById("product-size").value;
+        const productPrice = parseFloat(
+          document.getElementById("product-price").textContent.replace("GH₵", "").trim()
+        );
+        const productQuantity = parseInt(document.getElementById("product-quantity").value) || 1;
+      
+        // Find the product ID based on the name
+        const productId = products.find((p) => p.name === productName)?.id;
+      
+        // Create a standardized cart item
+        const cartItem = {
+          id: productId, // Unique identifier
+          image: productImage, // Normalized image path
           name: productName,
           price: productPrice,
           size: productSize,
-          quantity: parseInt(productQuantity),
+          quantity: productQuantity,
         };
-
-        // Get existing cart from localStorage
-        var cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-        // Check if the product is already in the cart (same name and size)
-        var existingItem = cart.find(
-          (item) => item.name === cartItem.name && item.size === cartItem.size
+      
+        // Retrieve the current cart from localStorage
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      
+        // Check for existing item in the cart by id and size
+        const existingItem = cart.find(
+          (item) => item.id === cartItem.id && item.size === cartItem.size
         );
-
+      
         if (existingItem) {
-          // If the item is already in the cart, update its quantity
+          // Update quantity if item exists
           existingItem.quantity += cartItem.quantity;
         } else {
-          // If the item is not in the cart, add it
+          // Add new item if it doesn't exist
           cart.push(cartItem);
         }
-
+      
         // Save the updated cart to localStorage
         localStorage.setItem("cart", JSON.stringify(cart));
+      
+        // Notify the user
+        alert(`${cartItem.name} (Size: ${cartItem.size}) has been added to your cart!`);
+      });
 
-        // Update the cart display
-        updateCartDisplay();
-      };
-
+      ` +
+      // Update the cart display in the header
       function updateCartDisplay() {
         var cart = JSON.parse(localStorage.getItem("cart")) || [];
-        document.getElementById("lg-bag").children[1].textContent = cart.length;
+        document.getElementById("lg-bag").children[1].textContent = cart.length; // Update cart count
       }
 
-      // Initial cart update
+      // Initialize cart display on page load
       updateCartDisplay();
     </script>
 
