@@ -231,27 +231,24 @@
     </footer>
 
     <script>
-      // Main image element
       var MainImg = document.getElementById("MainImg");
-      // Thumbnail images
       var smallimg = document.getElementsByClassName("small-img");
 
-      // Loop through thumbnails to add click functionality
-      for (let i = 0; i < smallimg.length; i++) {
-        smallimg[i].onclick = function () {
-          const product = products[i]; // Retrieve product by index
-
-          // Update the main image
-          MainImg.src = product.image;
-
-          // Update product details dynamically
-          document.getElementById("product-name").textContent = product.name;
-          document.getElementById(
-            "product-price"
-          ).textContent = `GH₵${product.price.toFixed(2)}`;
-        };
-      }
-
+      smallimg[0].onclick = function () {
+        MainImg.src = smallimg[0].src;
+      };
+      smallimg[1].onclick = function () {
+        MainImg.src = smallimg[1].src;
+      };
+      smallimg[2].onclick = function () {
+        MainImg.src = smallimg[2].src;
+      };
+      smallimg[3].onclick = function () {
+        MainImg.src = smallimg[3].src;
+      };
+    
+    </script>
+    <script>
       // Add to cart button functionality
       document.getElementById("add-to-cart-btn").addEventListener("click", function () {
         const productImage = new URL(MainImg.src).pathname; // Normalize the image path
