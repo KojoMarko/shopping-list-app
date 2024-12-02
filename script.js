@@ -14,7 +14,7 @@ const products = [
   { name: "Men's Floral Short-Sleeve Shirt", price: 899.99, image: "image/products/f5.jpg", id:4  },
   { name: "Men's Two-Tone Corduroy Shirt", price: 999.99, image: "image/products/f6.jpg", id:5  },
   { name: "Men's Fashion Shorts", price: 999.99, image: "image/products/f7.jpg", id:6  },
-  { name: "Women's Cat Print Blouse", price: 899.99, image: "image/products/f8.jpg", id:7  },
+  { name: "Women's Cat Print Blouse", price: 999.99, image: "image/products/f8.jpg", id:7  },
   { name: "Men's Fashion Shirts", price: 679.99, image: "image/products/n1.jpg", id:8  },
   { name: "Men's Fashion Long Sleeves Shirt", price: 679.99, image: "image/products/n2.jpg", id:9  },
   { name: "Men's Fashion Long Sleeves Shirt", price: 679.99, image: "image/products/n3.jpg", id:10  },
@@ -28,12 +28,10 @@ const products = [
 // Add event listeners to "Add to Cart" buttons
 carts.forEach((cart, index) => {
   cart.addEventListener("click", () => {
-    const quantity = document.querySelectorAll('input[type="number"]')[index]?.value || 1;
+    const quantity = parseInt(document.querySelectorAll('input[type="number"]')[index]?.value, 10) || 1;
     const size = document.querySelectorAll("select")[index]?.value || "Default";
 
-    // Create a new object to avoid modifying the original products
-    const selectedProduct = { ...products[index] };
-
+    const selectedProduct = { ...products[index] }; // Create a new object to avoid modifying the original products
     addToCart(selectedProduct, quantity, size);
     updateCartUI();
   });
@@ -42,17 +40,11 @@ carts.forEach((cart, index) => {
 // Initialize the cart on page load
 function initializeCart() {
   const productNumbers = parseInt(localStorage.getItem("cartNumbers")) || 0;
-
   const desktopCartCounter = document.querySelector(".cart span");
   const mobileCartCounter = document.querySelector("#mobile a span");
 
   if (desktopCartCounter) desktopCartCounter.textContent = productNumbers;
-  if (mobileCartCounter) {
-    mobileCartCounter.textContent = productNumbers;
-    console.log("Mobile cart counter initialized to:", productNumbers);
-  } else {
-    console.error("Mobile cart counter element not found!");
-  }
+  if (mobileCartCounter) mobileCartCounter.textContent = productNumbers;
 
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   if (cart.length > 0) {
@@ -61,31 +53,39 @@ function initializeCart() {
 }
 
 // Add product to the cart
+// Add product to the cart
 function addToCart(product, quantity, size) {
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
   // Add size and quantity to the product
   product.quantity = parseInt(quantity);
   product.size = size;
 
-  // Check if the product already exists in the cart with the same size
-  const existingProduct = cart.find((item) => item.name === product.name && item.size === size);
+  // Check if the product already exists in the cart with the same id and size
+  const existingProduct = cart.find((item) => item.id === product.id && item.size === size);
 
   if (existingProduct) {
+    // If product exists, just update the quantity
     existingProduct.quantity += product.quantity;
   } else {
+    // If not, add the new product
     cart.push(product);
   }
 
   // Save the updated cart to localStorage
   localStorage.setItem("cart", JSON.stringify(cart));
-  updateCartNumbers(quantity);
+
+  // Update cart numbers after adding the product
+  updateCartNumbers(product.quantity); // Update cart numbers based on the quantity of the added product
 }
 
 // Update cart numbers in local storage and UI
+// Update cart numbers in local storage and UI
 function updateCartNumbers(quantity) {
   let productNumbers = parseInt(localStorage.getItem("cartNumbers")) || 0;
-  productNumbers += parseInt(quantity);
+  productNumbers += quantity;  // Add the new quantity to the total
+
+  // Save the updated cart number to localStorage
   localStorage.setItem("cartNumbers", productNumbers);
 
   // Update desktop and mobile cart counters
@@ -93,10 +93,7 @@ function updateCartNumbers(quantity) {
   const mobileCartCounter = document.querySelector("#mobile a span");
 
   if (desktopCartCounter) desktopCartCounter.textContent = productNumbers;
-  if (mobileCartCounter) {
-    mobileCartCounter.textContent = productNumbers;
-    console.log("Mobile cart counter updated to:", productNumbers);
-  }
+  if (mobileCartCounter) mobileCartCounter.textContent = productNumbers;
 }
 
 // Update the cart UI
