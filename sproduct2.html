@@ -86,17 +86,17 @@
 
       <div class="single-pro-details">
         <h6>Home / T Shirt</h6>
-        <h4>Men's Fashion Shirt</h4>
-        <h2>GH₵899.99</h2>
-        <select name="size" id="size-select">
+        <h4  id="product-name">Men's Fashion Shirt</h4>
+        <h2  id="product-price">GH₵899.99</h2>
+        <select name="size"  id="product-size">
           <option value="">Select Size</option>
           <option value="Small">Small</option>
           <option value="Large">Large</option>
           <option value="Extra-Large">XL</option>
           <option value="Extra-Extra-Large">XXL</option>
         </select>
-        <input type="number" value="1" />
-        <button class="normal add-cart">Add to cart</button>
+        <input type="number" value="1"  id="product-quantity"/>
+        <button class="normal add-cart" id="add-to-cart-btn">Add to cart</button>
 
         <h4>Product Details</h4>
         <span
@@ -274,6 +274,65 @@
         MainImg.src = smallimg[3].src;
       };
     </script>
+
+    <script>
+      // Add to cart button functionality
+      document.getElementById("add-to-cart-btn").addEventListener("click", function () {
+        const productImage = new URL(MainImg.src).pathname; // Normalize the image path
+        const productName = document.getElementById("product-name").textContent.trim();
+        const productSize = document.getElementById("product-size").value;
+        const productPrice = parseFloat(
+          document.getElementById("product-price").textContent.replace("GH₵", "").trim()
+        );
+        const productQuantity = parseInt(document.getElementById("product-quantity").value) || 1;
+      
+        // Find the product ID based on the name
+        const productId = products.find((p) => p.name === productName)?.id;
+      
+        // Create a standardized cart item
+        const cartItem = {
+          id: productId, // Unique identifier
+          image: productImage, // Normalized image path
+          name: productName,
+          price: productPrice,
+          size: productSize,
+          quantity: productQuantity,
+        };
+      
+        // Retrieve the current cart from localStorage
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      
+        // Check for existing item in the cart by id and size
+        const existingItem = cart.find(
+          (item) => item.id === cartItem.id && item.size === cartItem.size
+        );
+      
+        if (existingItem) {
+          // Update quantity if item exists
+          existingItem.quantity += cartItem.quantity;
+        } else {
+          // Add new item if it doesn't exist
+          cart.push(cartItem);
+        }
+      
+        // Save the updated cart to localStorage
+        localStorage.setItem("cart", JSON.stringify(cart));
+      
+        // Notify the user
+        alert(`${cartItem.name} (Size: ${cartItem.size}) has been added to your cart!`);
+      });
+
+      
+      // Update the cart display in the header
+      function updateCartDisplay() {
+        var cart = JSON.parse(localStorage.getItem("cart")) || [];
+        document.getElementById("lg-bag").children[1].textContent = cart.length; // Update cart count
+      }
+
+      // Initialize cart display on page load
+      updateCartDisplay();
+    </script>
+
 
     <script src="script.js"></script>
   </body>
